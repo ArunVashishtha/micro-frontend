@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+    font-size: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+    p, h4 {
+        margin: 5px;
+    }
+}
+
+.item {
+    display: flex;
+    align-items: baseline;
+    width: 100%;
+    & > * {
+        width: 50%;
+    }
+}
+
+.title {
+    font-weight: bold;
+    font-size: x-large;
+    text-align: center;
+}
+
+.not-found {
+    font-size: 22px;
+    color: brown;
+}
+
+.renew {
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 5px 15px;
+}

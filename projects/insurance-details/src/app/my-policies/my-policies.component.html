@@ -1,0 +1,72 @@
+<div>
+  <div class="govuk-width-container" *ngIf="policyDetails; else policyNotFound">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <div class="gem-c-big-number">
+            <span class="gem-c-big-number__label">
+              {{policyDetails.policyType}} - {{policyDetails.policyNumber}}
+            </span>
+            <div>
+              {{policyDetails.insurer}}
+            </div>
+            <div class="gem-c-big-number__value govuk-!-font-size-48 govuk-!-margin-top-2 govuk-!-margin-bottom-2">
+              {{policyDetails.sumInsured | currency: 'INR' }}
+            </div>
+            <strong class="govuk-tag govuk-tag--turquoise govuk-!-margin-top-2 govuk-!-margin-bottom-2"
+              style="max-width:300px">{{policyDetails.policyStartDate}} - {{policyDetails.policyEndDate}}</strong> <br>
+            <p class="govuk-body govuk-!-margin-bottom-2">This policy is issued to
+              <span class="govuk-body govuk-!-font-weight-bold">
+                {{policyDetails.policyHolderName}}
+              </span>
+            </p>
+
+            <!-- New fields added based on enhanced object structure -->
+            <p class="govuk-body govuk-!-margin-bottom-2">
+              <strong>Premium Amount:</strong> {{policyDetails.premiumAmount | currency: 'INR'}}
+            </p>
+            <p class="govuk-body govuk-!-margin-bottom-2">
+              <strong>Policy Status:</strong> {{policyDetails.policyStatus}}
+            </p>
+            <p class="govuk-body govuk-!-margin-bottom-2">
+              <strong>Payment Frequency:</strong> {{policyDetails.paymentFrequency}}
+            </p>
+
+            <!-- Coverage Details -->
+            <div *ngIf="policyDetails.coverageDetails">
+              <p class="govuk-body govuk-!-margin-bottom-2">
+                <strong>Hospitalization Cover:</strong> {{policyDetails.coverageDetails.hospitalizationCover}}
+              </p>
+              <p class="govuk-body govuk-!-margin-bottom-2">
+                <strong>Day Care Treatment:</strong> {{policyDetails.coverageDetails.dayCareTreatment}}
+              </p>
+              <p class="govuk-body govuk-!-margin-bottom-2">
+                <strong>Pre-Existing Diseases:</strong> {{policyDetails.coverageDetails.preExistingDiseases}}
+              </p>
+              <p class="govuk-body govuk-!-margin-bottom-2">
+                <strong>Maternity Cover:</strong> {{policyDetails.coverageDetails.maternityCover}}
+              </p>
+              <p class="govuk-body govuk-!-margin-bottom-2">
+                <strong>Ambulance Charges:</strong> {{policyDetails.coverageDetails.ambulanceCharges}}
+              </p>
+              <p class="govuk-body govuk-!-margin-bottom-2">
+                <strong>Critical Illness Cover:</strong> {{policyDetails.coverageDetails.criticalIllnessCover}}
+              </p>
+            </div>
+
+          </div>
+          <p class="govuk-body">
+            <a (click)="proceedToRenew()" class="govuk-link govuk-link--no-visited-state">Renew this policy</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<ng-template #policyNotFound>
+  <span class="policy-not-found">
+    Policy Not Found...
+  </span>
+</ng-template>

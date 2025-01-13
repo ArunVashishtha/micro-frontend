@@ -1,0 +1,47 @@
+<div *ngIf="policyDetail else notFoundTemplate" class="container">
+    <p class="title">
+      Click on renew button to renew the policy
+    </p>
+  
+    <div class="item">
+      <label for="">Policy number:</label>
+      <h4>
+        <strong>{{policyDetail.policyNumber}}</strong>
+      </h4>
+    </div>
+  
+    <div class="item">
+      <label for="">Policy Holder:</label>
+      <h4>{{policyDetail.policyHolderName}}</h4>
+    </div>
+  
+    <div class="item">
+      <label for="">Sum Insured:</label>
+      <h4>{{policyDetail.sumInsured | currency: 'INR'}}</h4>
+    </div>
+  
+    <!-- New Fields -->
+    <div class="item">
+      <label for="">Premium Amount:</label>
+      <h4>{{policyDetail.premiumAmount | currency: 'INR'}}</h4>
+    </div>
+  
+    <div class="item">
+      <label for="">Policy Status:</label>
+      <h4>{{policyDetail.policyStatus}}</h4>
+    </div>
+  
+    <div class="item">
+      <label for="">Payment Frequency:</label>
+      <h4>{{policyDetail.paymentFrequency}}</h4>
+    </div>
+    <button class="renew" routerLink="../../">Renew</button>
+  </div>
+  
+<ng-template #notFoundTemplate>
+    <div class="container">
+        <span class="not-found">
+            Policy not found for renewal...
+        </span>
+    </div>
+</ng-template>
