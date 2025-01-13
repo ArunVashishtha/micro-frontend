@@ -8,7 +8,7 @@ const routes: Routes = [
     path: 'insurance/:policyNumber', loadChildren: () => {
       return loadRemoteModule({
         remoteName: 'insuranceDetails',
-        remoteEntry: `${environment.insuranceDetailMFE}/remoteEntry.js`,
+        remoteEntry: `${environment.insuranceDetailsMFE}/remoteEntry.js`,
         exposedModule: './MyPoliciesModule'
       }).then(m => m.MyPoliciesModule).catch(err => console.log(err))
     }
