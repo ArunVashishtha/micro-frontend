@@ -27,22 +27,11 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-        // No need for now
-        // library: { type: "module" },
-
-        // For remotes (please adjust)
         name: "hostApp",
-        // filename: "remoteEntry.js",
-        // exposes: {
-        //     './Component': './projects/container-application/src/app/app.component.ts',
-        // },        
-        
-        // For hosts (please adjust)
         remotes: {
             "insuranceDetails": "insuranceDetails@https://insurance-details-3142877.netlify.app/remoteEntry.js",
             "premiumPayments": "premiumPayment@https://premium-payments-3142877.netlify.app/remoteEntry.js",
         },
-
         shared: share({
           "@angular/core": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 
           "@angular/common": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 
