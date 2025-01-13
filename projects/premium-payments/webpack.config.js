@@ -14,6 +14,17 @@ module.exports = {
     publicPath: "auto",
     scriptType: "text/javascript"
   },
+  module: {
+    rules: [
+      {
+        test: /\.worker\.ts$/,  // Match worker files
+        use: { 
+          loader: 'worker-loader', 
+          options: { inline: true }
+        }
+      }
+    ]
+  },
   optimization: {
     runtimeChunk: false
   },

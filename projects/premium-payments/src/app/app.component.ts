@@ -32,7 +32,8 @@ type PolicyDetail = {
 export class AppComponent {
   title = 'premium-payments';
   policyDetail: PolicyDetail | null = null;
-
+  result: number = 0;
+  worker: Worker | undefined;
   constructor(
     private router: Router
   ) {}
@@ -47,9 +48,35 @@ export class AppComponent {
     } catch (error) {
       
     }
+    // Check if the environment supports Web Workers
+    if (typeof Worker !== 'undefined') {
+      // Dynamically import the worker script
+      this.worker = new Worker(new URL('./worker.worker', import.meta.url), { type: 'module' });
+
+      // Post a message to the worker
+      this.worker.postMessage('start');
+
+      // Listen for messages from the worker
+      this.worker.onmessage = ({ data }) => {
+        this.result = data;
+        console.log('Result from worker:', data);
+      };
+
+      // Handle worker errors
+      this.worker.onerror = (error) => {
+        console.error('Worker Error: ', error);
+      };
+    } else {
+      console.log('Web Workers are not supported in this environment.');
+    }
   }
 
   onRenew() {
     this.router.navigateByUrl('/');
+  }
+  ngOnDestroy() {
+    if (this.worker) {
+      this.worker.terminate(); // Clean up the worker when the component is destroyed
+    }
   }
 }
