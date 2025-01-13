@@ -59,7 +59,10 @@ npm run run:all
 
 - `container-application`: The container application hosting the micro-frontends.  
 - `insurance-details`: The `insurance-details` micro-frontend.  
-- `premium-payments`: The `premium-payments` micro-frontend.  
+- `premium-payments`: The `premium-payments` micro-frontend.
+
+### Project Demo URL: -
+- https://sparkling-bombolone-da2a27.netlify.app/
 
 ## License  
 This project is licensed under the [MIT License](LICENSE).  
