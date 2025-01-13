@@ -16,17 +16,17 @@ Follow these steps to set up and run the project:
 ### Step 1: Clone the Repository  
 Clone this repository using the following command:  
 ```bash  
-git clone https://github.com/Arun9684/mfe.git  
+git clone https://github.com/ArunVashishtha/micro-frontend.git
 ```  
 
 ### Step 2: Install Dependencies  
 Navigate to the project folder and install the required dependencies:  
 ```bash  
-cd mfe  
+cd micro-frontend 
 npm install  
 ```  
 
-### Step 3: Start the Host Application  
+### Step 3: Start the Container Application  
 Run the container application (host) using this command:  
 ```bash  
 ng serve container-application -o  
@@ -50,15 +50,17 @@ Open your browser and navigate to:
 
 From the dashboard, you can navigate to different links to load the corresponding MFEs.  
 
+### Step 3-5: Run in Single step use this command
+```bash  
+npm run run:all  
+```  
+
 ## Project Structure  
 
 - `container-application`: The container application hosting the micro-frontends.  
-- `mfe1`: The `insurance-details` micro-frontend.  
-- `mfe2`: The `premium-payments` micro-frontend.  
+- `insurance-details`: The `insurance-details` micro-frontend.  
+- `premium-payments`: The `premium-payments` micro-frontend.  
 
 ## License  
 This project is licensed under the [MIT License](LICENSE).  
 
----
-
-Happy coding! 🚀  
