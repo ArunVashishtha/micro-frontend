@@ -51,6 +51,7 @@
 								}
 							],
 							"outputHashing": "all",
+							"sourceMap": false,
 							"extraWebpackConfig": "projects/insurance-details/webpack.prod.config.js"
 						},
 						"development": {
@@ -164,6 +165,7 @@
 								}
 							],
 							"outputHashing": "all",
+							"sourceMap": false,
 							"extraWebpackConfig": "projects/container-application/webpack.prod.config.js"
 						},
 						"development": {
@@ -271,6 +273,7 @@
 								}
 							],
 							"outputHashing": "all",
+							"sourceMap": false,
 							"extraWebpackConfig": "projects/premium-payments/webpack.prod.config.js"
 						},
 						"development": {

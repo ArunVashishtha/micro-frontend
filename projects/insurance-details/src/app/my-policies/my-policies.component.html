@@ -20,11 +20,10 @@
                 {{policyDetails.policyHolderName}}
               </span>
             </p>
-
-            <!-- New fields added based on enhanced object structure -->
-            <p class="govuk-body govuk-!-margin-bottom-2">
+           <p class="govuk-body govuk-!-margin-bottom-2">
               <strong>Premium Amount:</strong> {{policyDetails.premiumAmount | currency: 'INR'}}
             </p>
+            
             <p class="govuk-body govuk-!-margin-bottom-2">
               <strong>Policy Status:</strong> {{policyDetails.policyStatus}}
             </p>
@@ -32,7 +31,6 @@
               <strong>Payment Frequency:</strong> {{policyDetails.paymentFrequency}}
             </p>
 
-            <!-- Coverage Details -->
             <div *ngIf="policyDetails.coverageDetails">
               <p class="govuk-body govuk-!-margin-bottom-2">
                 <strong>Hospitalization Cover:</strong> {{policyDetails.coverageDetails.hospitalizationCover}}
@@ -55,9 +53,7 @@
             </div>
 
           </div>
-          <p class="govuk-body">
-            <a (click)="proceedToRenew()" class="govuk-link govuk-link--no-visited-state">Renew this policy</a>
-          </p>
+           <a (click)="proceedToRenew()" class="govuk-link govuk-link--no-visited-state">Renew this policy</a>
         </div>
       </div>
     </div>
@@ -67,6 +63,6 @@
 
 <ng-template #policyNotFound>
   <span class="policy-not-found">
-    Policy Not Found...
+    Policy does not exist...
   </span>
 </ng-template>

@@ -1,9 +1,5 @@
 <div *ngIf="policyDetail else notFoundTemplate" class="container">
-    <p class="title">
-      Click on renew button to renew the policy
-    </p>
-  
-    <div class="item">
+      <div class="item">
       <label for="">Policy number:</label>
       <h4>
         <strong>{{policyDetail.policyNumber}}</strong>
@@ -41,7 +37,7 @@
 <ng-template #notFoundTemplate>
     <div class="container">
         <span class="not-found">
-            Policy not found for renewal...
+            Please select policy from insurance details...
         </span>
     </div>
 </ng-template>

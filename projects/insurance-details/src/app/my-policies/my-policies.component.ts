@@ -62,6 +62,6 @@ export class MyPoliciesComponent {
 
   proceedToRenew() {
     sessionStorage.setItem('policyDetail', JSON.stringify(this.policyDetails));
-    this.router.navigate(['payment']);
+    this.router.navigate(['premium-payment']);
   }
 }

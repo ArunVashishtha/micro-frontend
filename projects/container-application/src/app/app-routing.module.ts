@@ -14,7 +14,7 @@ const routes: Routes = [
     }
   },
   {
-    path: 'payment',
+    path: 'premium-payment',
     loadChildren: () => {
       return loadRemoteModule({
         remoteName: 'premiumPayments',
