@@ -256,7 +256,8 @@
 						],
 						"scripts": [],
 						"extraWebpackConfig": "projects/premium-payments/webpack.config.js",
-						"commonChunk": false
+            "commonChunk": false,
+            "webWorkerTsConfig": "projects/premium-payments/tsconfig.worker.json"
 					},
 					"configurations": {
 						"production": {
@@ -328,7 +329,8 @@
 						"styles": [
 							"projects/premium-payments/src/styles.scss"
 						],
-						"scripts": []
+            "scripts": [],
+            "webWorkerTsConfig": "projects/premium-payments/tsconfig.worker.json"
 					}
 				}
 			}
