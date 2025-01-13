@@ -30,7 +30,7 @@ module.exports = {
         name: "hostApp",
         remotes: {
             "insuranceDetails": "insuranceDetails@http://localhost:4201/remoteEntry.js",
-            "premiumPayment": "premiumPayment@http://localhost:4202/remoteEntry.js",
+            "premiumPayments": "premiumPayments@http://localhost:4202/remoteEntry.js",
         },
         shared: share({
           "@angular/core": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 

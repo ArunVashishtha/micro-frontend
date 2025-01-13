@@ -1,5 +1,5 @@
 export const environment = {
   production: false,
   insuranceDetailMFE: 'http://localhost:4201',
-  premiumPaymentMFE: 'http://localhost:4202',
+  premiumPaymentsMFE: 'http://localhost:4202',
 };

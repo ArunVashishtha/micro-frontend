@@ -17,8 +17,8 @@ const routes: Routes = [
     path: 'payment',
     loadChildren: () => {
       return loadRemoteModule({
-        remoteName: 'premiumPayment',
-        remoteEntry: `${environment.premiumPaymentMFE}/remoteEntry.js`,
+        remoteName: 'premiumPayments',
+        remoteEntry: `${environment.premiumPaymentsMFE}/remoteEntry.js`,
         exposedModule: './AppModule'
       }).then(m => m.AppModule).catch(err => console.log(err))
     }

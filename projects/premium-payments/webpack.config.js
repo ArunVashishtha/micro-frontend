@@ -10,7 +10,7 @@ sharedMappings.register(
 
 module.exports = {
   output: {
-    uniqueName: "premiumPayment",
+    uniqueName: "premiumPayments",
     publicPath: "auto",
     scriptType: "text/javascript"
   },
@@ -27,7 +27,7 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-        name: "premiumPayment",
+        name: "premiumPayments",
         filename: "remoteEntry.js",
         exposes: {
             './AppModule': './projects/premium-payments/src/app/app.module.ts',
